@@ -41,7 +41,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-cyan-400 text-sm font-bold uppercase tracking-wider">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            نظام الإدارة التعليمي الأذكى لعام 2026
+            نظام ادارة السناتر التعليمية لعام 2026
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.3] md:leading-[1.25] tracking-tight text-white pb-2">
@@ -83,21 +83,21 @@ export default function Hero() {
           >
             <div className="flex flex-col items-center sm:items-start flex-1">
               <span className="text-2xl md:text-3xl font-bold text-white flex flex-row-reverse justify-end gap-1 font-mono">
-                <span>+</span><CountUp start={0} end={750} duration={2.5} enableScrollSpy scrollSpyOnce />
+                <span>+</span><CountUp start={0} end={750} duration={2.5} />
               </span>
               <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 text-center sm:text-right">طالب نشط</span>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/10 mx-1 md:mx-2" />
             <div className="flex flex-col items-center sm:items-start flex-1">
               <span className="text-2xl md:text-3xl font-bold text-white flex flex-row-reverse justify-end gap-1 font-mono">
-                <span>+</span><CountUp start={0} end={12} duration={2.5} enableScrollSpy scrollSpyOnce />
+                <span>+</span><CountUp start={0} end={12} duration={2.5} />
               </span>
               <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 text-center sm:text-right">سنتر تعليمي</span>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/10 mx-1 md:mx-2" />
             <div className="flex flex-col items-center sm:items-start flex-1">
               <span className="text-2xl md:text-3xl font-bold text-cyan-400 flex flex-row-reverse justify-end gap-1 font-mono">
-                <span>%</span><CountUp start={0} end={99.9} duration={2.5} decimals={1} enableScrollSpy scrollSpyOnce />
+                <span>%</span><CountUp start={0} end={99.9} duration={2.5} decimals={1} />
               </span>
               <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 text-center sm:text-right">استقرار النظام</span>
             </div>
@@ -142,14 +142,14 @@ export default function Hero() {
           >
             <div className="text-xs font-bold text-slate-400 uppercase mb-1">تقرير الأرباح</div>
             <div className="text-2xl font-black text-blue-700 flex items-center gap-1 justify-end flex-row-reverse" dir="ltr">
-              <CountUp start={0} end={42500} duration={3} separator="," enableScrollSpy scrollSpyOnce />
+              <CountUp start={0} end={42500} duration={3} separator="," />
               <span>EGP</span>
             </div>
             <div className="mt-3 flex items-center gap-2 text-xs font-bold text-green-500">
               <span className="flex items-center justify-center w-4 h-4 bg-green-100 rounded-full">↑</span>
               <span className="flex items-center gap-0.5" dir="ltr">
                 <span>+</span>
-                <CountUp start={0} end={24} duration={3} enableScrollSpy scrollSpyOnce />
+                <CountUp start={0} end={24} duration={3} />
                 <span>%</span>
               </span>
               <span>عن الشهر الماضي</span>
