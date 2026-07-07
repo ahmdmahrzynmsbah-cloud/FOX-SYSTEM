@@ -11,6 +11,7 @@ import Problems from './components/Problems';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import Comparison from './components/Comparison';
+import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
@@ -30,7 +31,6 @@ export default function App() {
   return (
     <>
       {!loadingComplete && <Loader onComplete={() => setLoadingComplete(true)} />}
-
       <main className="min-h-screen bg-fox-bg text-white font-sans selection:bg-blue-600 selection:text-white relative overflow-hidden">
         {/* Global atmospheric meshes */}
         <div className="fixed top-[-20%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none z-0" />
@@ -44,6 +44,7 @@ export default function App() {
           <Screenshots />
           <Comparison />
           <Testimonials />
+          <Pricing />
           <FAQ />
           <CTA />
           <Footer />

@@ -1,8 +1,15 @@
-import { motion } from 'motion/react';
+import { motion, useInView } from 'motion/react';
 import { ArrowLeft, MessageCircle } from 'lucide-react';
 import CountUp from 'react-countup';
+import { useRef } from 'react';
 
 export default function Hero() {
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true });
+  
+  const reportRef = useRef(null);
+  const reportInView = useInView(reportRef, { once: true });
+
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       {/* Background Blurs */}
@@ -76,6 +83,7 @@ export default function Hero() {
           </div>
 
           <motion.div 
+            ref={statsRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -83,21 +91,21 @@ export default function Hero() {
           >
             <div className="flex flex-col items-center sm:items-start flex-1">
               <span className="text-2xl md:text-3xl font-bold text-white flex flex-row-reverse justify-end gap-1 font-mono">
-                <span>+</span><CountUp start={0} end={750} duration={2.5} />
+                <span>+</span>{statsInView && <CountUp start={0} end={750} duration={2.5} />}
               </span>
               <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 text-center sm:text-right">طالب نشط</span>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/10 mx-1 md:mx-2" />
             <div className="flex flex-col items-center sm:items-start flex-1">
               <span className="text-2xl md:text-3xl font-bold text-white flex flex-row-reverse justify-end gap-1 font-mono">
-                <span>+</span><CountUp start={0} end={12} duration={2.5} />
+                <span>+</span>{statsInView && <CountUp start={0} end={12} duration={2.5} />}
               </span>
               <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 text-center sm:text-right">سنتر تعليمي</span>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/10 mx-1 md:mx-2" />
             <div className="flex flex-col items-center sm:items-start flex-1">
               <span className="text-2xl md:text-3xl font-bold text-cyan-400 flex flex-row-reverse justify-end gap-1 font-mono">
-                <span>%</span><CountUp start={0} end={99.9} duration={2.5} decimals={1} />
+                <span>%</span>{statsInView && <CountUp start={0} end={99.9} duration={2.5} decimals={1} />}
               </span>
               <span className="text-xs text-gray-400 uppercase tracking-widest mt-1 text-center sm:text-right">استقرار النظام</span>
             </div>
@@ -136,20 +144,21 @@ export default function Hero() {
           
           {/* Floating Element */}
           <motion.div 
+            ref={reportRef}
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -bottom-6 -left-6 bg-white rounded-3xl p-6 shadow-2xl text-slate-900 w-56 transform -rotate-3 border border-slate-200 z-20"
           >
             <div className="text-xs font-bold text-slate-400 uppercase mb-1">تقرير الأرباح</div>
             <div className="text-2xl font-black text-blue-700 flex items-center gap-1 justify-end flex-row-reverse" dir="ltr">
-              <CountUp start={0} end={42500} duration={3} separator="," />
+              {reportInView && <CountUp start={0} end={42500} duration={3} separator="," />}
               <span>EGP</span>
             </div>
             <div className="mt-3 flex items-center gap-2 text-xs font-bold text-green-500">
               <span className="flex items-center justify-center w-4 h-4 bg-green-100 rounded-full">↑</span>
               <span className="flex items-center gap-0.5" dir="ltr">
                 <span>+</span>
-                <CountUp start={0} end={24} duration={3} />
+                {reportInView && <CountUp start={0} end={24} duration={3} />}
                 <span>%</span>
               </span>
               <span>عن الشهر الماضي</span>

@@ -19,7 +19,7 @@ export default function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
-            {[{ name: 'المميزات', href: '#features' }, { name: 'المقارنة', href: '#comparison' }, { name: 'الأسئلة الشائعة', href: '#faq' }].map((link) => (
+            {[{ name: 'المميزات', href: '#features' }, { name: 'المقارنة', href: '#comparison' }, { name: 'الباقات', href: '#pricing' }, { name: 'الأسئلة الشائعة', href: '#faq' }].map((link) => (
               <a key={link.href} href={link.href} className="relative group hover:text-white transition-colors py-1">
                 {link.name}
                 <span className="absolute bottom-0 right-0 w-full h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-300 ease-out" />
